@@ -25,14 +25,13 @@ $ bazel build --build_event_binary_file=/tmp/bep-events.bin //foo/bar/baz
 
 ## License
 
-Bazel formats the BEP messages it writes to the message file as protocol buffer
+Bazel formats the BEP messages it writes to the message file as protobuf
 messages. In Bazel's [official
 repository](https://github.com/bazelbuild/bazel/tree/release-6.5.0), they
-provide some `.proto` files that define the protocol buffer mesages. In Bazel's
-repo these `.proto` files are compiled into a Java library. For this probject I
-needed to consume the messages using Python, so I copied the `.proto` files
-from Bazel's repo into the `proto_src` directory. The only change that I made
-was to some of the `required` statements. I compiled the resulting `.proto`
-files into the `*_pb2.py` source files in the `proto` directory. Bazel uses the
-Apache-2.0 license, and this blurb is meant to address term 4.b. of that
-license.
+provide some `.proto` files that define the protobuf messages. These  `.proto`
+files are set up to be compiled into a Java library. For this project I needed
+to consume the messages using Python, so I copied the `.proto` files from
+Bazel's repo into the `proto_src` directory. I updated the `required`-statement
+paths. (The `*_pb2.py` files found in `proto` directory were compiled from
+these `.proto` files.) Bazel uses the Apache-2.0 license, and this blurb is
+meant to address term 4.b. of that license.
