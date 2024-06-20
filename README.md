@@ -10,6 +10,19 @@ This repo contains a simple script that outputs the BEP messages as they're
 written to the message file. The script is mainly just meant as a simple
 example. You can expand on it however you like if you find it helpful.
 
+## Example usage
+
+In one shell:
+```
+$ touch /tmp/bep-events.bin
+$ python3 main.py /tmp/bep-events.bin
+```
+
+In another shell:
+```
+$ bazel build --build_event_binary_file=/tmp/bep-events.bin //foo/bar/baz
+```
+
 ## License
 
 Bazel formats the BEP messages it writes to the message file as protocol buffer
